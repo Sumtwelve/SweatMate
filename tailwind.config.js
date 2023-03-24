@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [".SweatMate/views/**/*.{html,handlebars,js}",],
+  content: ["./public/**/*.{html,js}", "./views/**/*.{html,handlebars,js}"],
   theme: {
     extend: {},
   },
