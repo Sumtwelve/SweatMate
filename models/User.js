@@ -35,7 +35,7 @@ User.init(
                 len: [8]
             }
         },
-        date_created:{
+        date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
@@ -43,16 +43,16 @@ User.init(
     },
     {
         hooks: {
-          beforeCreate: async (newUserData) => {
-            newUserData.email = newUserData.email.toLowerCase();
-            newUserData.password = await bcrypt.hash(newUserData.password, 10);
-            return newUserData;
-          },
-          beforeUpdate: async (updatedUserData) => {
-            updatedUserData.email = updatedUserData.email.toLowerCase();
-            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-            return updatedUserData;
-          },
+            beforeCreate: async (newUserData) => {
+                newUserData.email = newUserData.email.toLowerCase();
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+            beforeUpdate: async (updatedUserData) => {
+                updatedUserData.email = updatedUserData.email.toLowerCase();
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            },
         },
         sequelize,
         timestamps: false,
@@ -61,3 +61,6 @@ User.init(
         modelName: 'user',
     }
 );
+
+
+module.exports = User
