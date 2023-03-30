@@ -1,0 +1,54 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.main-window {
+    background-color: white;
+    margin-left: 400px;
+}
+
+.settings-list-section {
+    position: fixed;
+    background-color: #e2e2e2;
+    height: 100%;
+    border-color: black;
+}
+
+.settings-list-section li {
+    border-color: black;
+    font-size: 16pt;
+}
+
+.logout-btn {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: rgb(221, 41, 41);
+    border-radius: 0;
+}
+
+.new-routine-btn {
+    transition: all 0.3s ease;
+}
+
+.new-routine-btn:hover {
+    background-color: #4552ff;
+}
+
+.routines table {
+    width: 75%;
+    border-collapse: collapse;
+}
+
+.routines th {
+    padding: 20px;
+}
+
+.routines td {
+    background-color: #F2E7E7;
+    padding: 15px;
+    border: 1px solid #B1B1B1;
+}

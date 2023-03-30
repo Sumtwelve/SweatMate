@@ -559,6 +559,30 @@ video {
   margin: 0.75rem;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -571,12 +595,36 @@ video {
   margin-left: 5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
+}
+
+.table-header-group {
+  display: table-header-group;
+}
+
+.h-0 {
+  height: 0px;
+}
+
+.table-auto {
+  table-layout: auto;
 }
 
 .flex-row {
@@ -587,12 +635,48 @@ video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
 .border-2 {
   border-width: 2px;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-b-0 {
   border-bottom-width: 0px;
+}
+
+.border-r {
+  border-right-width: 1px;
+}
+
+.border-r-2 {
+  border-right-width: 2px;
+}
+
+.border-r-0 {
+  border-right-width: 0px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
 }
 
 .bg-red-500 {
@@ -605,6 +689,16 @@ video {
   background-color: rgb(56 189 248 / var(--tw-bg-opacity));
 }
 
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -615,6 +709,48 @@ video {
 
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .text-center {
@@ -631,8 +767,27 @@ video {
   line-height: 1.75rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-white {
