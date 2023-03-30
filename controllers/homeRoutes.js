@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
 
     // Get all projects and JOIN with user data
-    res.render('homepage')
+    res.render('landing-page', {page_title: "SweatMate | Fitness for Fitness' Sake"})
 
 });
 
@@ -17,7 +17,7 @@ router.get('/login', (req, res) => {
         return;
     }
 
-    res.render('login');
+    res.render('login', { logged_in: req.session.logged_in });
 });
 
 

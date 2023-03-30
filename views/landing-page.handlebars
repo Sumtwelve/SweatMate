@@ -1,0 +1,57 @@
+<div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        <span role="img" aria-label="money">💦</span>
+        <a href="/">SweatMate</a>
+      </h1>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+            <a href="/profile">profile</a> |
+            <button class="no-button" id="logout">logout</button>
+        {{else}}
+            <a href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
+      
+    </footer>
+</div>
+
+<main>
+    <h2 class="bg-sky-400 float-right">SweatMate is your workout, your way.</h2>
+    <section class="flex">
+        <article>
+            <img src="/images/calendar.jpg" alt="photo of a calendar">
+            <h2>Create your workout</h2>
+            <ul>
+                <li>Choose from a selection of workouts or define your own custom ones</li>
+                <li>Set the number of sets and reps you want to shoot for</li>
+                <li>Create reminders to perform certain workouts on certain days</li>
+            </ul>
+        </article>
+        <article>
+            <img src="/images/stretch.jpg" alt="photo of a man stretching">
+            <h2>Track your progress</h2>
+            <ul>
+                <li>See how much you're improving over time</li>
+                <li>Helpful graphs to visualize your training success</li>
+            </ul>
+        </article>
+        <article>
+            <img src="/images/shoes.jpg" alt="photo of someone sitting on a park bench at sunrise">
+            <h2>Create your workout</h2>
+            <ul>
+                <li>Set custom long-term or short-term goals for each workout</li>
+                <li>Choose a custom motivational reward for each goal</li>
+                <li>Be reminded of your goals just before beginning a routine or a workout</li>
+            </ul>
+        </article>
+    </section>
+    <a href="/login">Get Started</a>
+</main>
