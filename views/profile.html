@@ -19,51 +19,69 @@
             <article>
                 <ul>
                     <li class="p-5 border-t-2 border-r-0 border-b-0"><a href="#fitness-info">My Fitness Info</a></li>
-                    <li class="p-5 border-t-2 border-r-0 border-b-0"><a href="#routines">Workouts & Routines</a></li>
+                    <li class="p-5 border-t-2 border-r-0 border-b-0"><a href="#workouts">Workouts</a></li>
                     <li class="p-5 border-t-2 border-r-0 border-b-2"><a href="#goals">Goals</a></li>
                 </ul>
             </article>
             <button class="logout-btn bg-red-500 text-white font-semibold text-xl p-5 m-3 my-auto" type="button">Log Out</button>
         </section>
         <section class="main-window w-100">
-            <div class="routines" id="routines">
+            <div class="workouts" id="workouts">
                 <hr class="mt-2">
-                <h2 class="text-6xl py-4 mb-4">ROUTINES & WORKOUTS</h2>
-                <div class="select-routine-div flex flex-wrap items-center">
-                    <h3 class="text-4xl p-5 w-50">Select Routine:</h3>
-                    <select class="m-6 p-4 px-9 pr-10 w-50 border text-2xl">
-                        <option value="routine_1">Routine 1</option>
-                        <option value="routine_2">Routine 2</option>
-                        <option value="routine_3">Routine 3</option>
-                    </select>
-                    <button type="button" class="new-routine-btn bg-blue-500 text-white p-4 px-6 font-semibold text-2xl">+ Create New Routine</button>
-                </div>
-                <article class="routine-details">
+                <h2 class="text-6xl py-4 mb-4">WORKOUTS</h2>
+                <div class="workouts-table-box max-h-96 overflow-y-auto w-auto">
                     <table class="table-auto text-3xl">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Sets / Reps / Time</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="workout-table-body">
                             <tr>
                                 <td>Push-ups</td>
                                 <td>3 sets of 5 reps</td>
+                                <td class="text-center" onclick="la()"><button type="button">❌</button></td>
                             </tr>
                             <tr>
                                 <td>Sit-ups</td>
                                 <td>3 sets of 5 reps</td>
+                                <td class="text-center"><button type="button">❌</button></td>
                             </tr>
                             <tr>
                                 <td>Pull-ups</td>
                                 <td>3 sets of 5 reps</td>
+                                <td class="text-center"><button type="button">❌</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pull-ups</td>
+                                <td>3 sets of 5 reps</td>
+                                <td class="text-center"><button type="button">❌</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pull-ups</td>
+                                <td>3 sets of 5 reps</td>
+                                <td class="text-center"><button type="button">❌</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pull-ups</td>
+                                <td>3 sets of 5 reps</td>
+                                <td class="text-center"><button type="button">❌</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pull-ups</td>
+                                <td>3 sets of 5 reps</td>
+                                <td class="text-center"><button type="button">❌</button></td>
                             </tr>
                         </tbody>
                     </table>
-                </article>
+                </div>
+                <button type="button" id="new-workout-btn" class="add-btn mr-3">+ Add Workout</button>
+                <button type="button" id="save-workout-btn" class="disabled-btn">Save ✔</button>
             </div>
         </section>
     </main>
+    <script src="../public/js/profile.js"></script>
 </body>
 </html>

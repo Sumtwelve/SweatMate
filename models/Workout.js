@@ -16,7 +16,8 @@ Workout.init(
             allowNull: false
         },
         instructions: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING, // this is where '3 sets of 5 reps' (for example) will be stored
+            allowNull: false
         },
         routine_id: {
             type: DataTypes.INTEGER,

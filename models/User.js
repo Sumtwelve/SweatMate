@@ -35,6 +35,10 @@ User.init(
             validate: {
                 len: [8]
             }
+        }, // CHANGE: Added routines array, will store routine_id's directly onto the User database entries
+        routines: {
+            type: DataTypes.ARRAY,
+            allowNull: true,
         }
     },
     {

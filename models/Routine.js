@@ -13,22 +13,20 @@ Routine.init(
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: true
         },
         do_day: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        custom_color: {
-            type: DataTypes.STRING // a string to hold a hex-code color to personalize the look of the routine
-        },
-        date_created:{
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
+        }, // CHANGE: Added workouts array, will store workout id's directly onto the Routine entries in the db
+        workouts: {
+            type: DataTypes.ARRAY,
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,

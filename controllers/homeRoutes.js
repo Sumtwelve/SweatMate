@@ -1,17 +1,14 @@
 const router = require('express').Router();
-const User = require('../models/');
+const { User, Routine } = require('../models/');
 const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-
-    // Get all projects and JOIN with user data
     res.render('landing-page', {page_title: "SweatMate | Fitness for Fitness' Sake"})
-
 });
 
 router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
+    // If the user is already logged in, redirect the request to /profile
     if (req.session.logged_in) {
         res.redirect('/profile');
         return;
@@ -21,7 +18,7 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/workout/:id', async (req, res) => {
+router.get('/routine/:id', async (req, res) => {
     try {
         const workoutData = await Workout.findByPk(req.params.id, {
             include: [
@@ -48,10 +45,16 @@ router.get('/profile', withAuth, async (req, res) => {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Workout }],
+            include: [{ model: Routine }],
         });
 
-        const user = userData.get({ plain: true });
+        const user = userData.map((data) => data.get({ plain: true }));
+        
+        const routines = await Routine.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
 
         res.render('profile', {
             ...user,

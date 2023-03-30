@@ -1,10 +1,20 @@
 const router = require('express').Router();
+const { v4: uuidv4 } = require('uuid');
 const { User } = require('../../models');
 
+// route to GET all users
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll();
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
+// route to create a new user
 router.post('/', async (req, res) => {
     try {
-        console.log("welcome to the route");
         const userData = await User.create(req.body);
 
         req.session.save(() => {
@@ -16,11 +26,14 @@ router.post('/', async (req, res) => {
 
             res.status(200).json(userData);
         });
+
+        console.log(req.session);
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
+// route to log in a user
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
