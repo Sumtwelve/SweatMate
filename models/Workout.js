@@ -19,10 +19,10 @@ Workout.init(
             type: DataTypes.STRING, // this is where '3 sets of 5 reps' (for example) will be stored
             allowNull: false
         },
-        routine_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'routine',
+                model: 'user',
                 key: 'id'
             }
         },

@@ -2,14 +2,19 @@ const router = require('express').Router();
 const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// route to GET all workouts that belong to a certain Routine ID
-router.get('/:routineID', withAuth, async (req, res) => {
+// route to GET a workout by its ID
+router.get('/:id', withAuth, async (req, res) => {
     try {
-        const workoutData = await Workout.findAll({
+        const workoutData = await Workout.findOne({
             where: {
-                routine_id: req.params.routineID
+                id: req.params.id
             }
-        })
+        });
+        if (!workoutData) {
+            res.status(404).json({ message: `Workout ID ${req.params.id} not found` });
+        } else {
+            res.status(200).json(workoutData);
+        }
     } catch (err) {
         res.status(400).json(err);
     }
