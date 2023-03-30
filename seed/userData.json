@@ -1,0 +1,8 @@
+[
+    {
+        "id": "1",
+        "name": "John Doe",
+        "goals": ["Do two pushups"],
+        "completed_goals": ["Did one pushup"]
+    }
+]
