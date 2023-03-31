@@ -2,7 +2,7 @@
     <aside class="settings-list flex flex-col border-r-2">
         <article class="profile-corner text-center">
             <img class="block mx-auto" src="https://placehold.co/200x200">
-            <h1 class="text-4xl p-4 py-6">Welcome, {{name}}</h1>
+            <h1 class="text-4xl p-4 py-6">Welcome,</h1>
         </article>
         <article>
             <ul>
@@ -16,18 +16,7 @@
     <section class="main-window w-100">
         <div class="routines" id="routines">
             <hr class="mt-2">
-            <h2 class="text-6xl py-4 mb-4">ROUTINES & WORKOUTS</h2>
-            <div class="select-routine-div flex flex-wrap items-center">
-                <h3 class="text-4xl p-5 w-50">Select Routine:</h3>
-                <select class="m-6 p-4 px-9 pr-10 w-50 border text-2xl">
-                    {{#each routines as |routine|}}
-                    <option>{{routine.name}}</option>
-                    {{else}}
-                    <option>[ no routines ]</option>
-                    {{/each}}
-                </select>
-                <button type="button" class="new-routine-btn bg-blue-500 text-white p-4 px-6 font-semibold text-2xl">+ Create New Routine</button>
-            </div>
+            <h2 class="text-6xl py-4 mb-4">WORKOUTS</h2>
             <div class="routine-workouts hover:overflow-y-auto">
                 <table class="table-auto text-3xl">
                     <thead>
@@ -37,7 +26,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each workouts as |workout|}}
                         <tr>
                             <td>Push-ups</td>
                             <td>3 sets of 5 reps</td>
@@ -57,4 +45,4 @@
     </section>
 </main>
 
-<script src="public/js/profile.js"></script>
+<script src="/js/profile.js"></script>

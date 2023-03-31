@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { v4: uuidv4 } = require('uuid');
 const { User } = require('../../models');
 
 // route to GET all users
@@ -7,6 +6,16 @@ router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll();
         res.status(200).json(userData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+// GET route for getting the user id
+router.get('/id', async (req, res) => {
+    try {
+        console.log(req.session.user_id);
+        res.status(200).json(req.session);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -60,6 +69,8 @@ router.post('/login', async (req, res) => {
 
             res.json({ user: userData, message: 'You are now logged in!' });
         });
+
+        res.render('profile');
 
     } catch (err) {
         res.status(400).json(err);

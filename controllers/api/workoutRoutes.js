@@ -3,7 +3,7 @@ const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // route to GET a workout by its ID
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const workoutData = await Workout.findOne({
             where: {
@@ -15,16 +15,17 @@ router.get('/:id', withAuth, async (req, res) => {
         } else {
             res.status(200).json(workoutData);
         }
+        console.log(workoutData);
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
+        console.log(req.body);
         const workoutData = await Workout.create({
             ...req.body
-            // routine_id will be passed in with req.body when the page script calls the POST method
         });
 
         res.status(200).json(workoutData);

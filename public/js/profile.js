@@ -50,8 +50,33 @@ function enableSaveWorkoutBtn() {
     saveWorkoutBtn.addEventListener("click", handleWorkoutSave);
 }
 
-function handleWorkoutSave() {
+const saveWorkout = (workout) =>
+        fetch('/api/users/id', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(workout),
+    });
 
+function handleWorkoutSave() {
+    
+    const getUserID = () =>
+        fetch('/api/users/id', {
+            method: 'GET',
+            headers: {
+            'Content-Type': 'application/json',
+            }
+    });
+    
+    let workout = {
+        title: nameField.value,
+        description: descField.value,
+        user_id: getUserID
+    }
+
+    saveWorkout(workout);
+    console.log(getUserID);
 }
 
 const renderNewRoutineForm = () => {

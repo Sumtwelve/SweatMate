@@ -15,7 +15,7 @@ Workout.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        instructions: {
+        description: {
             type: DataTypes.STRING, // this is where '3 sets of 5 reps' (for example) will be stored
             allowNull: false
         },
@@ -32,7 +32,7 @@ Workout.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'routine',
+        modelName: 'workout',
     }
 );
 
