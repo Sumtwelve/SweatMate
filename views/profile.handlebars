@@ -2,7 +2,7 @@
     <aside class="settings-list flex flex-col border-r-2">
         <article class="profile-corner text-center">
             <img class="block mx-auto" src="https://placehold.co/200x200">
-            <h1 class="text-4xl p-4 py-6">Welcome,</h1>
+            <h1 class="text-4xl p-4 py-6">Welcome, {{userData.dataValues.name}}</h1>
         </article>
         <article>
             <ul>
@@ -17,7 +17,7 @@
         <div class="routines" id="routines">
             <hr class="mt-2">
             <h2 class="text-6xl py-4 mb-4">WORKOUTS</h2>
-            <div class="routine-workouts hover:overflow-y-auto">
+            <div class="routine-workouts overflow-y-auto">
                 <table class="table-auto text-3xl">
                     <thead>
                         <tr>
@@ -25,7 +25,7 @@
                             <th>Sets / Reps / Time</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="workout-table-body">
                         <tr>
                             <td>Push-ups</td>
                             <td>3 sets of 5 reps</td>
@@ -41,8 +41,11 @@
                     </tbody>
                 </table>
             </div>
+            <button type="button" id="new-workout-btn" class="add-btn mr-3">+ Add Workout</button>
+            <button type="button" id="save-workout-btn" class="disabled-btn" onclick="handleWorkoutSave({{userData.dataValues.id}})">Save ✔</button>
         </div>
     </section>
 </main>
 
+<script src="/js/logout.js"></script>
 <script src="/js/profile.js"></script>

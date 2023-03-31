@@ -54,23 +54,30 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const validPassword = await userData.checkPassword(req.body.password);
-
-        if (!validPassword) {
-            res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
-            return;
-        }
-
+        const validPassword = await userData.checkPassword(req.body.password)
+        ? 
         req.session.save(() => {
             req.session.user_id = userData.id;
+            req.session.username = req.body.name;
             req.session.logged_in = true;
 
-            res.json({ user: userData, message: 'You are now logged in!' });
-        });
+            //res.json({ user: userData, message: 'You are now logged in!' });
+            console.log(`REQ.SESSION.USER_ID FROM LOGIN ROUTE: ${req.session.user_id}`);
 
-        res.render('profile');
+            res.status(200).json(userData);
+            
+        })
+        :
+        res.status(400).json({ message: 'Incorrect email or password, please try again' });
+        
+
+        
+
+        
+
+        console.log(`USERDATA ID FROM LOGIN ROUTE: ${userData.id}`);
+
+        //res.redirect('/profile');
 
     } catch (err) {
         res.status(400).json(err);
@@ -78,6 +85,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+    console.log("welcome to the logout route");
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
@@ -86,8 +94,6 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
-
-
 
 
 module.exports = router;
