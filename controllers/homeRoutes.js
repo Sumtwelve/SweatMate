@@ -43,31 +43,24 @@ router.get('/workout/:id', async (req, res) => {
 router.get('/profile', async (req, res) => {
     try {
         // Find the logged in user based on the session ID
-        console.log(`REQ.SESSION BEFORE ATTEMPTING TO FIND USER ${JSON.stringify(req.session)}`);
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            //include: Workout
+            include: Workout
         });
 
-        console.log("\n")
-        console.log("this is after userData set");
-        console.log(`USERDATA IN PROFILE ROUTE ${userData}`);
+        if (!userData) {
+            res.status(400).json({ message: `Could not find user by id ${req.session.user_id}` });
+        } else {
 
-        //const user = userData.map((data) => data.get({ plain: true }));
+            console.log(`USERDATA FROM PROFILE ROUTE: ${JSON.stringify(userData, null, 2)}`);
+
+            res.render('profile', {
+                userData: userData,
+                logged_in: true,
+                workouts: userData.workouts
+            });
+        }
         
-        // const workouts = await Workout.findAll({
-        //     where: {
-        //         user_id: req.session.user_id
-        //     }
-        // });
-
-        console.log("after workouts variable made");
-
-        res.render('profile', {
-            userData: userData,
-            logged_in: true,
-            //workouts: workouts
-        });
     } catch (err) {
         console.log(err);
     }

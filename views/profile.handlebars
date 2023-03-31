@@ -1,5 +1,5 @@
 <main>
-    <aside class="settings-list flex flex-col border-r-2">
+    <aside class="settings-list fixed flex flex-col border-r-2">
         <article class="profile-corner text-center">
             <img class="block mx-auto" src="https://placehold.co/200x200">
             <h1 class="text-4xl p-4 py-6">Welcome, {{userData.dataValues.name}}</h1>
@@ -13,31 +13,32 @@
         </article>
         <button class="logout-btn bg-red-500 text-white font-semibold text-xl p-5 m-3 my-auto" type="button">Log Out</button>
     </aside>
-    <section class="main-window w-100">
+    <section class="main-window w-100 ml">
         <div class="routines" id="routines">
             <hr class="mt-2">
             <h2 class="text-6xl py-4 mb-4">WORKOUTS</h2>
-            <div class="routine-workouts overflow-y-auto">
+            <div class="workouts-table-box overflow-y-auto">
                 <table class="table-auto text-3xl">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Sets / Reps / Time</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody id="workout-table-body">
+                        {{#each workouts as |workout|}}
                         <tr>
-                            <td>Push-ups</td>
-                            <td>3 sets of 5 reps</td>
+                            <td>{{workout.dataValues.title}}</td>
+                            <td>{{workout.dataValues.description}}</td>
+                            <td class="text-center"><button type="button">❌</button></td>
                         </tr>
+                        {{else}}
                         <tr>
-                            <td>Sit-ups</td>
-                            <td>3 sets of 5 reps</td>
+                            <td>[ no workouts ]</td>
+                            <td></td>
                         </tr>
-                        <tr>
-                            <td>Pull-ups</td>
-                            <td>3 sets of 5 reps</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
             </div>
