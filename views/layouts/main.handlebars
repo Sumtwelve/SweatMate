@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SweatMate</title>
   
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/tailwind.css">
   <link rel="stylesheet" href="/css/output.css">
+  <link rel="stylesheet" href="/css/profile.css">
 </head>
 
 <body>
@@ -21,9 +23,9 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <button class="no-button logout-btn">logout</button>
         {{else}}
-        <a href="/api/login">login</a>
+        <a href="/api/user/login">login</a>
         {{/if}}
       </nav>
     </header>

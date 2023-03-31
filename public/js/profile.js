@@ -5,9 +5,12 @@ let newWorkoutBtn = document.getElementById("new-workout-btn");
 let buttonRow = document.getElementById("button-row");
 let saveWorkoutBtn = document.getElementById("save-workout-btn");
 
-function saveWorkout(workout, routine) {
-    //TODO: fetch request POSTing new workout to proper route
-}
+let nameField = document.createElement("input");
+nameField.value = "";
+nameField.setAttribute("placeholder", "Workout name");
+let descField = document.createElement("input");
+descField.value = "";
+descField.setAttribute("placeholder", "X sets of X reps");
 
 function renderNewWorkoutForm() {
     newWorkoutBtn.disabled = true;
@@ -16,11 +19,11 @@ function renderNewWorkoutForm() {
     let row = document.createElement("tr");
 
     let nameCell = document.createElement("td");
-    let nameField = document.createElement("input");
-    nameField.setAttribute("placeholder", "Workout Name");
+    //const nameField = document.createElement("input");
+    //nameField.setAttribute("placeholder", "Workout Name");
     let descCell = document.createElement("td");
-    let descField = document.createElement("input");
-    descField.setAttribute("placeholder", "X sets of X reps");
+    //let descField = document.createElement("input");
+    //descField.setAttribute("placeholder", "X sets of X reps");
     let deleteCell = document.createElement("td");
     deleteCell.setAttribute("class", "text-center");
     let deleteBtn = document.createElement("button");
@@ -47,11 +50,11 @@ function enableSaveWorkoutBtn() {
 
     saveWorkoutBtn.classList.replace("disabled-btn", "add-btn");
 
-    saveWorkoutBtn.addEventListener("click", handleWorkoutSave);
+    //saveWorkoutBtn.addEventListener("click", handleWorkoutSave);
 }
 
 const saveWorkout = (workout) =>
-        fetch('/api/users/id', {
+        fetch('/api/workout/', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -59,24 +62,26 @@ const saveWorkout = (workout) =>
             body: JSON.stringify(workout),
     });
 
-function handleWorkoutSave() {
-    
-    const getUserID = () =>
+const getUserID = () => {
         fetch('/api/users/id', {
             method: 'GET',
             headers: {
             'Content-Type': 'application/json',
             }
-    });
+        });
+}
+
+function handleWorkoutSave(user_id) {
     
     let workout = {
         title: nameField.value,
         description: descField.value,
-        user_id: getUserID
+        user_id: user_id
     }
 
+    console.log(workout.user_id);
+
     saveWorkout(workout);
-    console.log(getUserID);
 }
 
 const renderNewRoutineForm = () => {
