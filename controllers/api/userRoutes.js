@@ -54,6 +54,8 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        // The await here has no effect. Ternary operator used to force the code to
+        // wait for User.findOne() above to finish.
         const validPassword = await userData.checkPassword(req.body.password)
         ? 
         req.session.save(() => {
@@ -61,23 +63,11 @@ router.post('/login', async (req, res) => {
             req.session.username = req.body.name;
             req.session.logged_in = true;
 
-            //res.json({ user: userData, message: 'You are now logged in!' });
-            console.log(`REQ.SESSION.USER_ID FROM LOGIN ROUTE: ${req.session.user_id}`);
-
             res.status(200).json(userData);
             
         })
         :
         res.status(400).json({ message: 'Incorrect email or password, please try again' });
-        
-
-        
-
-        
-
-        console.log(`USERDATA ID FROM LOGIN ROUTE: ${userData.id}`);
-
-        //res.redirect('/profile');
 
     } catch (err) {
         res.status(400).json(err);
@@ -85,7 +75,6 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-    console.log("welcome to the logout route");
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();

@@ -1,8 +1,6 @@
-let routineDetailsSection = document.getElementById("routine-details");
 let workoutTable = document.querySelector("workouts-table-box");
 let workoutTableBody = document.getElementById("workout-table-body");
 let newWorkoutBtn = document.getElementById("new-workout-btn");
-let buttonRow = document.getElementById("button-row");
 let saveWorkoutBtn = document.getElementById("save-workout-btn");
 
 let nameField = document.createElement("input");
@@ -83,15 +81,6 @@ function handleWorkoutSave(user_id) {
 
     saveWorkout(workout);
 }
-
-const renderNewRoutineForm = () => {
-    routineDetailsSection.style.display = "none";
-
-    let routinesSection = document.getElementById("routines");
-
-    let newRoutineForm = document.createElement("form");
-
-};
 
 function la() {
     console.log("you clicked it");
