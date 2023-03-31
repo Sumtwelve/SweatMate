@@ -1,0 +1,78 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.main-window {
+    background-color: white;
+    margin-left: 400px;
+}
+
+.settings-list-section {
+    position: fixed;
+    background-color: #e2e2e2;
+    height: 100%;
+    border-color: black;
+}
+
+.settings-list-section li {
+    border-color: black;
+    font-size: 16pt;
+}
+
+.logout-btn {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: rgb(221, 41, 41);
+    border-radius: 0;
+}
+
+.add-btn {
+    color: white;
+    background-color: rgb(59 130 246);
+    font-weight: 600;
+    font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+    padding: 1rem;
+    padding-left: 1.5rem/* 24px */;
+    padding-right: 1.5rem/* 24px */;
+    margin-top: 1rem/* 16px */;
+    margin-bottom: 1rem/* 16px */;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #4552ff;
+}
+
+.workouts table {
+    width: 75%;
+    border-collapse: collapse;
+}
+
+.workouts th {
+    padding: 20px;
+}
+
+.workouts td {
+    background-color: #F2E7E7;
+    padding: 15px;
+    border: 1px solid #B1B1B1;
+}
+
+.disabled-btn {
+    cursor: default;
+    color: white;
+    background-color: gray;
+    font-weight: 600;
+    font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+    padding: 1rem;
+    padding-left: 1.5rem/* 24px */;
+    padding-right: 1.5rem/* 24px */;
+    margin-top: 1rem/* 16px */;
+    margin-bottom: 1rem/* 16px */;
+}

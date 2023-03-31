@@ -1,23 +1,20 @@
 const router = require('express').Router();
-const User = require('../models/');
+const { User, Workout } = require('../models/');
 const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-
-    // Get all projects and JOIN with user data
-    res.render('homepage')
-
+    res.render('landing-page', {page_title: "SweatMate | Fitness for Fitness' Sake"})
 });
 
 router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
+    // If the user is already logged in, redirect the request to /profile
     if (req.session.logged_in) {
         res.redirect('/profile');
         return;
     }
 
-    res.render('login');
+    res.render('login', { logged_in: req.session.logged_in });
 });
 
 
@@ -51,11 +48,18 @@ router.get('/profile', withAuth, async (req, res) => {
             include: [{ model: Workout }],
         });
 
-        const user = userData.get({ plain: true });
+        const user = userData.map((data) => data.get({ plain: true }));
+        
+        const workouts = await Workout.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
 
         res.render('profile', {
             ...user,
-            logged_in: true
+            logged_in: true,
+            workouts: workouts
         });
     } catch (err) {
         res.status(500).json(err);
