@@ -7,17 +7,17 @@ SweatMate is a fun and intuitive fitness app that provides customized workout pl
 - Kole Dallam
 - Gabe Faber
 - Noah Nielsen
-- Justice Pendray
 - Paul Dutile
 
 # Built using 🚧
 - HTML 
 - CSS 
 - Javascript 
+- Tailwind
 
 # Trials we experienced 💢
--
--
+- Wrapping our heads around the models for our app was a little difficult for a bit but ultimately figured things out.
+
 
 ![Alt text]()
 
