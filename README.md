@@ -14,10 +14,16 @@ SweatMate is a fun and intuitive fitness app that provides customized workout pl
 - CSS 
 - Javascript 
 - Tailwind
+- Handlebars
+- mySQL
 
 # Trials we experienced 💢
 - Wrapping our heads around the models for our app was a little difficult for a bit but ultimately figured things out.
+- We did have to scratch some bells and wistles our orginal app had that we dont anymore just to streamline the process.
 
+# Continuing Develpoment
+- Add calendar for better planning of workouts and routines.
+- Continue with creation of Goals function, its made but not finished with javascript.
 
 ![Alt text]()
 
