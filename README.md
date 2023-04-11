@@ -1,6 +1,6 @@
 # SweatMate 💧
 
-# Description 📝
+# Vision 📝
 SweatMate is a fun and intuitive fitness app that provides customized workout plans, tracks your progress, and helps maintain good posture to avoid injury. With easy-to-follow visuals and instructions, the app caters to all levels of fitness enthusiasts. You can create your own workout plans, track progress, and adjust workouts accordingly. The app's unique feature is the ability to maintain good posture with visual cues and reminders. This feature is particularly helpful for beginners. SweatMate is the ultimate fitness companion to take your workouts to the next level!
 
 Visit SweatMate and get started today! [https://sweatmate.herokuapp.com/](https://sweatmate.herokuapp.com/)
@@ -12,24 +12,24 @@ Visit SweatMate and get started today! [https://sweatmate.herokuapp.com/](https:
 - Paul Dutile
 
 # Built using 🚧
-- HTML 
-- CSS 
-- Javascript 
-- Tailwind
+- HTML
+- CSS / Tailwind
+- Javascript
 - Handlebars
-- mySQL
+- mySQL / Sequelize
 
 # Trials we experienced 💢
-- Wrapping our heads around the models for our app was a little difficult for a bit but ultimately figured things out.
-- We did have to scratch some bells and wistles our orginal app had that we dont anymore just to streamline the process.
+- Wrapping our heads around the models for our app was a little difficult for a bit, but ultimately we mostly figured things out.
+- We did have to scratch some bells and whistles from our orginal app just to get the MVP out in time.
 
 # Continuing Develpoment
 - Add calendar for better planning of workouts and routines.
-- Continue with creation of Goals function, its made but not finished with javascript.
+- Implement Routines to hold lists of workouts
+- Implement database of workouts the user can select from
+- Finish Goals feature
+- Finish Progress Tracker feature
 
 ![Alt text](./profile-screenshot.jpg)
 
-Deployed website: 
-
-# Licensed 📄
+# License 📄
 - This project is Licensed under the MIT License.
