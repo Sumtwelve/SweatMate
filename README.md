@@ -26,7 +26,7 @@ Visit SweatMate and get started today! [https://sweatmate.herokuapp.com/](https:
 - Wrapping our heads around the models for our app was a little difficult for a bit, but ultimately we mostly figured things out.
 - We did have to scratch some bells and whistles from our orginal app just to get the MVP out in time.
 
-## Continuing Develpoment
+## Continuing Develpoment 🚧
 This app was developed as a school project for the University of Utah 2022-23 Coding Bootcamp. With only 2 weeks to work on it, our vision turned out to be too complex to fully realize before the due date. In March 2023, the MVP was submitted and we received a passing grade, so development on the project has slowed down significantly. We will most likely finish it, but it will have to be on our own time, and some intended features may still never see deployment.
 A summary of things we hope to add in the future:
 - Add calendar for better planning of workouts and routines.
