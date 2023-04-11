@@ -1,6 +1,7 @@
 # SweatMate 💧
+![MIT License Badge](https://img.shields.io/badge/license-MIT-blue)
 
-![Alt text](./profile-screenshot.jpg)
+![Screenshot of SweatMate's profile page](./profile-screenshot.jpg)
 
 ## Vision 🧠
 SweatMate is a fun and intuitive fitness app that provides customized workout plans, tracks your progress, and helps maintain good posture to avoid injury. With easy-to-follow visuals and instructions, the app caters to all levels of fitness enthusiasts. You can create your own workout plans, track progress, and adjust workouts accordingly. The app's unique feature is the ability to maintain good posture with visual cues and reminders. This feature is particularly helpful for beginners. SweatMate is the ultimate fitness companion to take your workouts to the next level!
