@@ -27,7 +27,7 @@ Visit SweatMate and get started today! [https://sweatmate.herokuapp.com/](https:
 - Add calendar for better planning of workouts and routines.
 - Continue with creation of Goals function, its made but not finished with javascript.
 
-![Alt text]()
+![Alt text](./profile-screenshot.jpg)
 
 Deployed website: 
 
